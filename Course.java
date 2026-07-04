@@ -6,7 +6,7 @@ import java.util.List;
 public class Course {
     private String courseName;
     private String courseCode;
-    private Professor instructor; // aggregation git 22-1-2026
+    private Professor instructor; 
     private int maxCapacity;
     private List<Student>enrolledStudent;
 
@@ -19,14 +19,12 @@ public class Course {
 
 
     }
-    // check for capacity exception
     public void enrolledStudent(Student s) throws EnrollmentException {
         if (enrolledStudent.size() >= maxCapacity) {
             throw new EnrollmentException("Course" + courseCode + "is full.");
         }
         enrolledStudent.add(s);
         System.out.println("Enrolled" + s.getName());
-        // output generate
     }
         public void displayDetails() {
             System.out.println("Course Details ");
